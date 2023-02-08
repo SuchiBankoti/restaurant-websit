@@ -1,0 +1,8 @@
+.navbar {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  color: white;
+  background-color: rgb(130, 4, 4);
+}
