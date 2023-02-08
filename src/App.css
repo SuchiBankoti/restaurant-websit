@@ -1,3 +1,19 @@
 * {
   font-family: sans-serif;
 }
+.app {
+  background-color: aqua;
+  padding: 10px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  width: fit-content;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 2px rgb(51, 47, 47);
+  margin-top: 25px;
+}
