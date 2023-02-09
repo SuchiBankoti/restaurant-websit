@@ -33,9 +33,12 @@ localStorage.setItem(
 );
 function MenuProvider(props) {
   const [menu, setMenu] = useState([]);
+  const [toggle, setToggle] = useState(true);
   return (
     <contextDataProvider.Provider
       value={{
+        toggle,
+        setToggle,
         menu,
         setMenu,
       }}

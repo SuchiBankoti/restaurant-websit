@@ -4,7 +4,7 @@
 .main-page {
   display: flex;
   flex-direction: column;
-  background-color: antiquewhite;
+  background-color: rgb(146, 138, 138);
   align-items: center;
 }
 .content {
