@@ -1,8 +1,10 @@
 * {
   box-sizing: border-box;
 }
-.item {
+.item-container {
   border-bottom: 1px dotted black;
+  display: flex;
+  justify-content: space-around;
 }
 .item-name {
   font-weight: bolder;
