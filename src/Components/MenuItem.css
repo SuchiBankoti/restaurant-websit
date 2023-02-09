@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+.item {
+  border-bottom: 1px dotted black;
+}
+.item-name {
+  font-weight: bolder;
+  color: black;
+  font-family: sans-serif;
+}
+.item-des {
+  font-family: cursive;
+}
+.item-price {
+  font-weight: bolder;
+  color: brown;
+}

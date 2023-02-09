@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+.main-page {
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+  align-items: center;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: gray;
+  width: 40%;
+  height: fit-content;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 2px rgb(51, 47, 47);
+  margin-top: 25px;
+}
+.menu {
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 10px;
+}
