@@ -7,7 +7,7 @@ import { dataContext } from "./Context";
 function App() {
   const { toggle } = useContext(dataContext);
   return (
-    <div className="app" style={{ opacity: toggle ? 0.5 : "none" }}>
+    <div className="app" style={{ opacity: toggle ? 0.5 : 1 }}>
       <Navbar />
       <Mainpage />
     </div>

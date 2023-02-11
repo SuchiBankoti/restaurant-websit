@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { createPortal } from "react-dom";
 import { dataContext, MenuProvider } from "./Context";
 export default function Portal() {
-  const { toggle } = useContext(dataContext);
+  const { toggle, setToggle } = useContext(dataContext);
   const location = document.getElementById("portal");
   function CartContent() {
     return (
@@ -14,7 +14,7 @@ export default function Portal() {
           <p> name</p>
           <p>Total Amount</p>
           <p>price</p>
-          <button>Close</button>
+          <button onClick={() => setToggle(false)}>Close</button>
           <button>Order</button>
         </div>
       </MenuProvider>
