@@ -1,9 +1,15 @@
 import React, { useContext } from "react";
 import { createPortal } from "react-dom";
+import { nanoid } from "nanoid";
+import MenuItem from "./Components/MenuItem";
 import { dataContext, MenuProvider } from "./Context";
 export default function Portal() {
-  const { toggle, setToggle } = useContext(dataContext);
+  const { cartItems, toggle, setToggle } = useContext(dataContext);
   const location = document.getElementById("portal");
+  const cart = cartItems.filter((obj) =>
+    obj.isAdded > 0 ? <MenuItem key={nanoid()} item={obj} /> : ""
+  );
+  console.log(cart);
   function CartContent() {
     return (
       <MenuProvider>

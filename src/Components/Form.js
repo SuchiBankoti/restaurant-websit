@@ -1,35 +1,37 @@
-import React, { useReducer } from "react";
+import React, { useContext, useReducer } from "react";
+import { dataContext } from "../Context";
 import "./Form.css";
-export default function Form() {
-  // const [amount, setAmount] = useState(0);
-  function reducer(state, action) {
+export default function Form(props) {
+  const { setCartItems } = useContext(dataContext);
+  const { item } = props;
+  const [foodItem, dispatch] = useReducer(reducer, item);
+  function reducer(prev, action) {
     switch (action) {
-      case "add":
-        return state + 1;
       case "sub":
-        return state - 1;
+        return prev.isAdded > 0 ? { ...prev, isAdded: prev.isAdded - 1 } : prev;
+      case "add":
+        return { ...prev, isAdded: prev.isAdded + 1 };
       default:
-        console.log("unexpected error in switch");
+        console.log("error in reducer function");
     }
   }
-  const [amount, dispatch] = useReducer(reducer, 0);
+  function handleCartItems(i) {
+    setCartItems((prev) => prev.map((obj) => (obj.id === i ? foodItem : obj)));
+  }
 
   return (
     <div className="form">
       <form>
+        <div>Amount</div>
         <label>
-          Amount
-          <input type="text" value={amount} readOnly></input>
+          <div onClick={() => dispatch("sub")}>-</div>
+          <input type="text" value={foodItem.isAdded} readOnly></input>
+          <div onClick={() => dispatch("add")}>+</div>
         </label>
       </form>
-      <div className="btns">
-        <button className="add-btn" onClick={() => dispatch("add")}>
-          +Add
-        </button>
-        <button className="sub-btn" onClick={() => dispatch("sub")}>
-          -Sub
-        </button>
-      </div>
+      <button className="add-btn" onClick={() => handleCartItems(foodItem.id)}>
+        Add
+      </button>
     </div>
   );
 }

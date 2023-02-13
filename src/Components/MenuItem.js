@@ -1,4 +1,5 @@
 import React from "react";
+
 import Form from "./Form";
 import "./MenuItem.css";
 export default function MenuItem(props) {
@@ -10,7 +11,7 @@ export default function MenuItem(props) {
         <p className="item-des">{item.description}</p>
         <p className="item-price">{item.price}</p>
       </div>
-      <Form />
+      <Form item={item} />
     </div>
   );
 }

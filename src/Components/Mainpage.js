@@ -1,21 +1,11 @@
-import React, { useContext, useEffect } from "react";
-import { nanoid } from "nanoid";
+import React, { useContext } from "react";
 import "./Mainpage.css";
-import { dataContext } from "../Context";
 import MenuItem from "./MenuItem";
+import { nanoid } from "nanoid";
+import { dataContext } from "../Context";
 
 export default function Mainpage() {
-  const { menu, setMenu } = useContext(dataContext);
-
-  useEffect(() => {
-    function getMenu() {
-      const data = JSON.parse(localStorage.getItem("menu"));
-      console.log(1);
-      setMenu(data);
-    }
-    getMenu();
-  }, [setMenu]);
-
+  const { menu } = useContext(dataContext);
   const menuItems = menu.map((item) => <MenuItem key={nanoid()} item={item} />);
   return (
     <div className="main-page">
@@ -32,7 +22,7 @@ export default function Mainpage() {
           </p>
         </div>
       </div>
-      <div className="menu">{menuItems}</div>
+      <div className="menu">{menuItems}</div>;
     </div>
   );
 }
