@@ -1,23 +1,7 @@
 * {
   box-sizing: border-box;
 }
-.form {
+.quantity {
   display: flex;
   flex-direction: column;
-}
-.add-btn,
-.sub-btn {
-  background-color: brown;
-  width: 70px;
-  border-radius: 2px;
-  color: white;
-}
-.btns {
-  display: flex;
-}
-input {
-  width: 30px;
-}
-label {
-  display: flex;
 }
