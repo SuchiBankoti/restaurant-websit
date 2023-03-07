@@ -4,12 +4,9 @@ import { nanoid } from "nanoid";
 import MenuItem from "./Components/MenuItem";
 import { dataContext, MenuProvider } from "./Context";
 export default function Portal() {
-  const { cartItems, toggle, setToggle } = useContext(dataContext);
+  const { menu, toggle, setToggle } = useContext(dataContext);
   const location = document.getElementById("portal");
-  const cart = cartItems.filter((obj) =>
-    obj.isAdded > 0 ? <MenuItem key={nanoid()} item={obj} /> : ""
-  );
-  console.log(cart);
+  const cartItems = menu.filter((obj) => obj.unit > 0);
   function CartContent() {
     return (
       <MenuProvider>
@@ -17,9 +14,18 @@ export default function Portal() {
           className="cart-content"
           style={{ display: toggle ? "block" : "none" }}
         >
-          <p> name</p>
-          <p>Total Amount</p>
-          <p>price</p>
+          {cartItems.length === 0 ? (
+            <div>No items in cart</div>
+          ) : (
+            <div>
+              {cartItems.map((obj) => (
+                <div key={nanoid()}>
+                  <MenuItem item={obj} />
+                  <div style={{ color: "pink" }}>{obj.unit}</div>
+                </div>
+              ))}
+            </div>
+          )}
           <button onClick={() => setToggle(false)}>Close</button>
           <button>Order</button>
         </div>

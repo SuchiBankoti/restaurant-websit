@@ -5,14 +5,16 @@
   border-bottom: 1px dotted black;
   display: flex;
   justify-content: space-around;
+  color: inherit;
 }
 .item-name {
   font-weight: bolder;
-  color: black;
   font-family: sans-serif;
+  color: inherit;
 }
 .item-des {
   font-family: cursive;
+  color: inherit;
 }
 .item-price {
   font-weight: bolder;

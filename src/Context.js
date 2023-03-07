@@ -9,39 +9,54 @@ function MenuProvider(props) {
       name: "Sushi",
       description: "Finest fish and veggies",
       price: "$22.99",
-      isAdded: 0,
+      unit: 0,
     },
     {
       id: 2,
       name: "Burger",
       description: "Finest bread and veggies",
       price: "$5.99",
-      isAdded: 0,
+      unit: 0,
     },
     {
       id: 3,
       name: "Chicken",
       description: "Finest chicken and veggies",
       price: "$12.99",
-      isAdded: 0,
+      unit: 0,
     },
     {
       id: 4,
       name: "Ramen",
       description: "Finest eggs and noodles",
       price: "$80.99",
-      isAdded: 0,
+      unit: 0,
     },
     {
       id: 5,
       name: "Green bowl",
       description: "Finest fruits and veggies",
       price: "$25.99",
-      isAdded: 0,
+      unit: 0,
     },
   ]);
   const [toggle, setToggle] = useState(false);
-  const [cartItems, setCartItems] = useState(menu);
+  // const [cartItems, setCartItems] = useState([]);
+  function manageCart(newItem, units) {
+    setMenu((prev) =>
+      prev.map((obj) =>
+        obj.name === newItem.name ? { ...obj, unit: units } : obj
+      )
+    );
+    // console.log("quant---" + units);
+    // setCartItems((prev) =>
+    //   prev.find((obj) => obj.name === newItem.name)
+    //     ? prev.map((obj) =>
+    //         obj.name === newItem.name ? { ...obj, unit: units } : obj
+    //       )
+    //     : [...prev, { ...newItem, unit: units }]
+    // );
+  }
 
   return (
     <contextDataProvider.Provider
@@ -50,8 +65,9 @@ function MenuProvider(props) {
         setToggle,
         menu,
         setMenu,
-        cartItems,
-        setCartItems,
+        // cartItems,
+        // setCartItems,
+        manageCart,
       }}
     >
       {props.children}
