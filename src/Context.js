@@ -41,21 +41,12 @@ function MenuProvider(props) {
     },
   ]);
   const [toggle, setToggle] = useState(false);
-  // const [cartItems, setCartItems] = useState([]);
   function manageCart(newItem, units) {
     setMenu((prev) =>
       prev.map((obj) =>
         obj.name === newItem.name ? { ...obj, unit: units } : obj
       )
     );
-    // console.log("quant---" + units);
-    // setCartItems((prev) =>
-    //   prev.find((obj) => obj.name === newItem.name)
-    //     ? prev.map((obj) =>
-    //         obj.name === newItem.name ? { ...obj, unit: units } : obj
-    //       )
-    //     : [...prev, { ...newItem, unit: units }]
-    // );
   }
 
   return (
@@ -65,8 +56,6 @@ function MenuProvider(props) {
         setToggle,
         menu,
         setMenu,
-        // cartItems,
-        // setCartItems,
         manageCart,
       }}
     >

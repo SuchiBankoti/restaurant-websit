@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 .quantity {
+  background-color: red;
+  height: fit-content;
+  width: 5%;
+}
+.plus-minus {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  background-color: red;
+  height: fit-content;
+  width: 5%;
 }

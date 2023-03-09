@@ -6,7 +6,6 @@ import { dataContext } from "../Context";
 
 export default function Mainpage() {
   const { menu } = useContext(dataContext);
-  const menuItems = menu.map((item) => <MenuItem key={nanoid()} item={item} />);
   return (
     <div className="main-page">
       <div className="content">
@@ -22,7 +21,12 @@ export default function Mainpage() {
           </p>
         </div>
       </div>
-      <div className="menu">{menuItems}</div>;
+      <div className="menu">
+        {menu.map((item) => (
+          <MenuItem key={nanoid()} item={item} />
+        ))}
+      </div>
+      ;
     </div>
   );
 }

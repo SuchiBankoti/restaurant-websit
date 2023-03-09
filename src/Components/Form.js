@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useRef } from "react";
+import React, { useContext, useReducer } from "react";
 import { dataContext } from "../Context";
 import "./Form.css";
 export default function Form(props) {
@@ -7,13 +7,17 @@ export default function Form(props) {
   const reducer = (quant, action) => {
     switch (action) {
       case "+":
-        return quant + 1;
+        quant = quant + 1;
+        manageCart(item, quant);
+        return quant;
+
       case "-":
-        return quant > 0 ? quant - 1 : 0;
-      case "Add":
-        return quant + 1;
-      case "Change":
-        return;
+        if (quant > 0) {
+          quant = quant - 1;
+        }
+        manageCart(item, quant);
+        return quant;
+
       default:
         console.log("Unexpected action");
     }
@@ -22,10 +26,15 @@ export default function Form(props) {
 
   return (
     <div className="quantity">
-      <div>{quant}</div>
-      <button className="add-btn" onClick={() => manageCart(item, quant)}>
-        Add
-      </button>
+      {quant === 0 ? (
+        <div onClick={() => dispatch("+")}>Add</div>
+      ) : (
+        <div className="plus-minus">
+          <div onClick={() => dispatch("-")}>-</div>
+          <div>{quant}</div>
+          <div onClick={() => dispatch("+")}>+</div>
+        </div>
+      )}
     </div>
   );
 }

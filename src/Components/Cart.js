@@ -3,7 +3,7 @@ import "./Cart.css";
 import { dataContext } from "../Context";
 
 import { FaCartArrowDown } from "react-icons/fa";
-import Portal from "../Portal";
+import CartItems from "./CartItems";
 export default function Cart() {
   const { setToggle, menu } = useContext(dataContext);
   const numberOfItemsInCart = menu.filter((obj) => obj.unit > 0);
@@ -14,7 +14,7 @@ export default function Cart() {
         <div>Your Cart</div>
         <div className="cart-items">{numberOfItemsInCart.length}</div>
       </div>
-      <Portal />
+      <CartItems />
     </div>
   );
 }
