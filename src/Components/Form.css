@@ -2,14 +2,15 @@
   box-sizing: border-box;
 }
 .quantity {
-  background-color: red;
+  text-align: center;
+  border: 1px solid red;
   height: fit-content;
-  width: 5%;
+  width: 15%;
+  padding: 10px;
+  color: inherit;
+  border-radius: 5px;
 }
 .plus-minus {
   display: flex;
-  justify-content: space-around;
-  background-color: red;
-  height: fit-content;
-  width: 5%;
+  justify-content: space-between;
 }

@@ -6,6 +6,8 @@
   display: flex;
   justify-content: space-around;
   color: inherit;
+  width: 80%;
+  padding: 10px;
 }
 .item-name {
   font-weight: bolder;

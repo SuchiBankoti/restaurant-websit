@@ -10,6 +10,16 @@
   justify-content: space-evenly;
   align-items: center;
 }
+.unit-value {
+  color: white;
+  font-size: large;
+  font-weight: bolder;
+}
+.cart-unit {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 .cart-items {
   background-color: rgb(130, 4, 4);
   font-weight: 900;

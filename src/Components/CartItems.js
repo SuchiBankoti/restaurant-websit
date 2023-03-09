@@ -16,9 +16,9 @@ export default function CartItems() {
         ) : (
           <div>
             {cartItems.map((obj) => (
-              <div key={nanoid()}>
+              <div key={nanoid()} className="cart-unit">
                 <MenuItem item={obj} />
-                <div style={{ color: "pink" }}>{obj.unit}</div>
+                <div className="unit-value"> X {obj.unit}</div>
               </div>
             ))}
           </div>
