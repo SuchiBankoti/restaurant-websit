@@ -9,7 +9,7 @@ function App() {
   const { toggle } = useContext(dataContext);
   return (
     <div className="main">
-      <div className="app" style={{ opacity: toggle ? 0.5 : 1 }}>
+      <div className="app" style={{ filter: toggle ? "blur(3px)" : "blur(0)" }}>
         <Navbar />
         <Mainpage />
       </div>
