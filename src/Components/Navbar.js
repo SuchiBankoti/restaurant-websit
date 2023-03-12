@@ -4,8 +4,12 @@ import "./Navbar.css";
 export default function Navbar() {
   return (
     <div className="navbar">
-      <h1>ReactMeals</h1>
-      <Cart />
+      <div className="heading">
+        <h1>ReactMeals</h1>
+      </div>
+      <div className="cart-logo">
+        <Cart />
+      </div>
     </div>
   );
 }

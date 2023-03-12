@@ -6,8 +6,8 @@
   display: flex;
   justify-content: space-around;
   color: inherit;
-  width: 80%;
-  padding: 10px;
+  width: 90%;
+  padding: 5px;
 }
 .item-name {
   font-weight: bolder;
@@ -21,4 +21,7 @@
 .item-price {
   font-weight: bolder;
   color: brown;
+}
+.add-btn {
+  width: 25%;
 }

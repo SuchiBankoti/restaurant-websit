@@ -5,4 +5,14 @@
   padding: 10px;
   color: white;
   background-color: rgb(130, 4, 4);
+  width: 100%;
+}
+
+.heading {
+  width: 50%;
+  font-size: 0.5em;
+}
+.cart-logo {
+  width: 30%;
+  font-size: 0.7rem;
 }

@@ -11,7 +11,9 @@ export default function MenuItem(props) {
         <p className="item-des">{item.description}</p>
         <p className="item-price">{item.price}</p>
       </div>
-      <Form item={item} />
+      <div className="add-btn">
+        <Form item={item} />
+      </div>
     </div>
   );
 }

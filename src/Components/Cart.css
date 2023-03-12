@@ -3,7 +3,7 @@
 }
 .cart {
   display: flex;
-  width: 200px;
+  width: 90%;
   background-color: brown;
   border-radius: 20px;
   margin: 5px;
@@ -23,8 +23,8 @@
 .cart-items {
   background-color: rgb(130, 4, 4);
   font-weight: 900;
-  width: 30px;
-  height: 30px;
+  width: 25%;
+  height: 25%;
   text-align: center;
   border-radius: 50%;
   padding: 5px;
