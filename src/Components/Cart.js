@@ -7,12 +7,11 @@ export default function Cart() {
   const { setToggle, menu } = useContext(dataContext);
   const numberOfItemsInCart = menu.filter((obj) => obj.unit > 0);
   return (
-    <div>
+    <>
       <div className="cart">
         <FaCartArrowDown onClick={() => setToggle(true)} />
-        <div>Your Cart</div>
         <div className="cart-items">{numberOfItemsInCart.length}</div>
       </div>
-    </div>
+    </>
   );
 }

@@ -5,7 +5,7 @@
   text-align: center;
   border: 1px solid red;
   height: fit-content;
-  width: 100%;
+  width: fit-content;
   padding: 5px;
   color: inherit;
   border-radius: 5px;
@@ -15,4 +15,7 @@
   justify-content: space-between;
   gap: 10%;
   cursor: pointer;
+}
+.add {
+  font-size: 0.8rem;
 }

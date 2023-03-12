@@ -27,7 +27,9 @@ export default function Form(props) {
   return (
     <div className="quantity">
       {quant === 0 ? (
-        <div onClick={() => dispatch("+")}>Add</div>
+        <div onClick={() => dispatch("+")} className="add">
+          Add
+        </div>
       ) : (
         <div className="plus-minus">
           <div onClick={() => dispatch("-")}>-</div>
