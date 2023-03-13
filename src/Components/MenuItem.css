@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .item-container {
-  border-bottom: 1px dotted black;
+  border-bottom: 2px dotted black;
   display: flex;
   justify-content: space-around;
   color: inherit;

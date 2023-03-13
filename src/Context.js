@@ -13,7 +13,7 @@ function MenuProvider(props) {
     },
     {
       id: 2,
-      name: "Burger",
+      name: "Pasta",
       description: "Finest bread and veggies",
       price: "$5.99",
       unit: 0,
@@ -27,20 +27,21 @@ function MenuProvider(props) {
     },
     {
       id: 4,
-      name: "Ramen",
+      name: "Momo",
       description: "Finest eggs and noodles",
       price: "$80.99",
       unit: 0,
     },
     {
       id: 5,
-      name: "Green bowl",
+      name: "Green Bowl",
       description: "Finest fruits and veggies",
       price: "$25.99",
       unit: 0,
     },
   ]);
   const [toggle, setToggle] = useState(false);
+  const [toggleSearch, setToggleSearch] = useState(false);
   function manageCart(newItem, units) {
     setMenu((prev) =>
       prev.map((obj) =>
@@ -57,6 +58,8 @@ function MenuProvider(props) {
         menu,
         setMenu,
         manageCart,
+        toggleSearch,
+        setToggleSearch,
       }}
     >
       {props.children}
