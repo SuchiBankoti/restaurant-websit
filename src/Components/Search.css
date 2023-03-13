@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+.searchItems {
+  background-color: rgb(124, 63, 63);
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  color: white;
+  height: 20%;
+}

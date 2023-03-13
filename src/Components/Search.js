@@ -3,6 +3,7 @@ import { useState } from "react";
 import { dataContext } from "../Context";
 import MenuItem from "./MenuItem";
 import { nanoid } from "nanoid";
+import "./Search.css";
 
 export default function Search() {
   const { menu, setToggleSearch, toggleSearch } = useContext(dataContext);

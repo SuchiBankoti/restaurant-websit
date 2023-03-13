@@ -4,14 +4,14 @@
 .main-page {
   display: flex;
   flex-direction: column;
-  background-color: rgb(146, 138, 138);
   align-items: center;
+  background-image: url("/public/image/b.png");
+  background-size: cover;
 }
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: gray;
   width: fit-content;
   height: fit-content;
   margin: auto;
