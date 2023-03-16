@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
-import { useState } from "react";
 import { dataContext } from "../Context";
-import MenuItem from "./MenuItem";
-import { nanoid } from "nanoid";
+import { FaSearch } from "react-icons/fa";
 import "./Search.css";
+import SearchResults from "./SearchResults";
 
 export default function Search() {
-  const { menu, setToggleSearch, toggleSearch } = useContext(dataContext);
-  const [searchInput, setSearchInput] = useState("");
+  const { setToggleSearch, searchInput, setSearchInput } =
+    useContext(dataContext);
+
   function handleSearch(e) {
     setSearchInput(e.target.value);
   }
@@ -15,38 +15,11 @@ export default function Search() {
     <div>
       <div className="searchbar">
         <input value={searchInput} onChange={handleSearch} />
-        <button onClick={() => setToggleSearch(true)}>Search</button>
-      </div>
-      {toggleSearch ? (
-        <div className="searchItems">
-          {menu.filter((ele) =>
-            searchInput.localeCompare(ele.name, "en", {
-              sensitivity: "base",
-            }) === 0
-              ? ele
-              : ""
-          ).length > 0 ? (
-            <div>
-              {menu
-                .filter((ele) =>
-                  searchInput.localeCompare(ele.name, "en", {
-                    sensitivity: "base",
-                  }) === 0
-                    ? ele
-                    : ""
-                )
-                .map((e) => (
-                  <MenuItem key={nanoid()} item={e} />
-                ))}
-            </div>
-          ) : (
-            <div>No items in our menu matching above description</div>
-          )}
-          <button onClick={() => setToggleSearch(false)}>Close</button>
+        <div onClick={() => setToggleSearch(true)}>
+          <FaSearch />
         </div>
-      ) : (
-        ""
-      )}
+      </div>
+      <SearchResults />
     </div>
   );
 }

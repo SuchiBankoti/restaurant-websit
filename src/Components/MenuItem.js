@@ -1,6 +1,5 @@
 import React from "react";
-
-import Form from "./Form";
+import Adder from "./Adder";
 import "./MenuItem.css";
 export default function MenuItem(props) {
   const { item } = props;
@@ -18,7 +17,7 @@ export default function MenuItem(props) {
         <p className="item-price">{item.price}</p>
       </div>
       <div className="add-btn">
-        <Form item={item} />
+        <Adder item={item} />
       </div>
     </div>
   );

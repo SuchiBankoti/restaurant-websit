@@ -23,8 +23,9 @@ export default function CartItems() {
             ))}
           </div>
         )}
-        <button onClick={() => setToggle(false)}>Close</button>
-        <button>Order</button>
+        <div className="cart-btn">
+          <button onClick={() => setToggle(false)}>Close Cart</button>
+        </div>
       </div>
     </>
   );

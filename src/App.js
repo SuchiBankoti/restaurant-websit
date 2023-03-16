@@ -8,12 +8,17 @@ import { dataContext } from "./Context";
 function App() {
   const { toggle } = useContext(dataContext);
   return (
-    <div className="main">
-      <div className="app" style={{ filter: toggle ? "blur(3px)" : "blur(0)" }}>
-        <Navbar />
-        <Mainpage />
+    <div>
+      <div className="main">
+        <div
+          className="app"
+          style={{ filter: toggle ? "blur(3px)" : "blur(0)" }}
+        >
+          <Navbar />
+          <Mainpage />
+        </div>
+        <CartItems />
       </div>
-      <CartItems />
     </div>
   );
 }

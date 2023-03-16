@@ -2,9 +2,10 @@
   box-sizing: border-box;
 }
 .item-container {
-  border-bottom: 2px dotted black;
+  border-bottom: 2px dotted grey;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   color: inherit;
   width: 90%;
   padding: 5px;
@@ -12,16 +13,27 @@
 .item-name {
   font-weight: bolder;
   font-family: sans-serif;
-  color: inherit;
+  color: rgb(233, 162, 20);
 }
 .item-des {
   font-family: cursive;
-  color: inherit;
+  color: rgb(232, 232, 232);
 }
 .item-price {
   font-weight: bolder;
-  color: brown;
+  color: white;
 }
 .add-btn {
   width: 25%;
+}
+img {
+  height: 100%;
+  width: 100%;
+  border: 2px solid grey;
+  border-radius: 30%;
+}
+.img {
+  border-bottom: 5px solid gray;
+  width: 10%;
+  height: 20%;
 }

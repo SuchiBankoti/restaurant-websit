@@ -3,24 +3,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  color: rgb(137, 10, 10);
-  background-color: rgb(237, 233, 233);
+  color: white;
+  background-color: black;
   width: 100%;
-}
-
-.heading {
-  font-size: 0.5em;
-}
-.our-menu {
-  font-size: 3rem;
-  color: rgb(118, 10, 10);
-  letter-spacing: 2px;
-  font-family: fantasy;
-  font-weight: 100;
-}
-.underline {
-  background-color: red;
-  border: 0.1rem solid grey;
-  margin-left: 30px;
-  width: 60%;
 }

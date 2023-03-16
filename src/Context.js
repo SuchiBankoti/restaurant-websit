@@ -42,6 +42,7 @@ function MenuProvider(props) {
   ]);
   const [toggle, setToggle] = useState(false);
   const [toggleSearch, setToggleSearch] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
   function manageCart(newItem, units) {
     setMenu((prev) =>
       prev.map((obj) =>
@@ -60,6 +61,8 @@ function MenuProvider(props) {
         manageCart,
         toggleSearch,
         setToggleSearch,
+        searchInput,
+        setSearchInput,
       }}
     >
       {props.children}

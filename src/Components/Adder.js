@@ -1,6 +1,6 @@
 import React, { useContext, useReducer } from "react";
 import { dataContext } from "../Context";
-import "./Form.css";
+import "./Adder.css";
 export default function Form(props) {
   const { manageCart } = useContext(dataContext);
   const { item } = props;
@@ -12,9 +12,7 @@ export default function Form(props) {
         return quant;
 
       case "-":
-        if (quant > 0) {
-          quant = quant - 1;
-        }
+        quant = Math.max(quant - 1, 0);
         manageCart(item, quant);
         return quant;
 

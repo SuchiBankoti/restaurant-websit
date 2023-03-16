@@ -3,14 +3,14 @@
 }
 .quantity {
   text-align: center;
-  border: 1px solid red;
+  border: 1px solid grey;
   height: fit-content;
   padding: 5px;
-  color: inherit;
+  color: white;
   border-radius: 5px;
   width: 5rem;
   background-color: transparent;
-  box-shadow: 1px 1px black;
+  box-shadow: 1px 1px grey;
 }
 .plus-minus {
   display: flex;

@@ -4,13 +4,7 @@
 .cart {
   color: aliceblue;
   display: flex;
-  background-color: brown;
-  border-radius: 10%;
-  margin: 5px;
-  justify-content: space-evenly;
   align-items: center;
-  font-size: 0.7rem;
-  width: 5rem;
   height: 100%;
 }
 
@@ -32,18 +26,28 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  padding: 5px;
   color: black;
   background-color: aliceblue;
 }
 .cart-content {
   position: absolute;
-  top: 30%;
-  left: 20%;
-  width: 70%;
-  height: fit-content;
-  border-radius: 10px;
+  top: 1%;
+  left: 50%;
+  width: 50%;
+  height: 100%;
   padding: 10px;
-  color: white;
   background-color: black;
+  border: 2px solid white;
+}
+.cart-btn {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-btn > button {
+  height: 35px;
+  width: 15%;
+  background-color: rgb(199, 195, 195);
+  margin: 10px;
+  font-family: monospace;
+  font-weight: bolder;
 }
