@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { nanoid } from "nanoid";
 import MenuItem from "./MenuItem";
 import { dataContext } from "../Context";
+import { Link } from "react-router-dom";
 export default function CartItems() {
   const { menu, toggle, setToggle } = useContext(dataContext);
   const cartItems = menu.filter((obj) => obj.unit > 0);
@@ -12,7 +13,7 @@ export default function CartItems() {
         style={{ display: toggle ? "block" : "none" }}
       >
         {cartItems.length === 0 ? (
-          <div>No items in cart</div>
+          <div style={{ color: "white" }}>No items in cart</div>
         ) : (
           <div>
             {cartItems.map((obj) => (
@@ -24,7 +25,9 @@ export default function CartItems() {
           </div>
         )}
         <div className="cart-btn">
-          <button onClick={() => setToggle(false)}>Close Cart</button>
+          <Link to={"/"}>
+            <button onClick={() => setToggle(false)}>Close Cart</button>
+          </Link>
         </div>
       </div>
     </>
