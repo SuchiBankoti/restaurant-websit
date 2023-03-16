@@ -32,9 +32,9 @@ export default function SearchResults() {
           ) : (
             <div>No items in our menu matching above description</div>
           )}
-          <div className="cart-btn">
-            <button onClick={() => setToggleSearch(false)}>Close</button>
-          </div>
+          <button onClick={() => setToggleSearch(false)} className="cart-btn">
+            Close
+          </button>
         </div>
       ) : (
         ""

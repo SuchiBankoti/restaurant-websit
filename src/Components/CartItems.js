@@ -24,11 +24,11 @@ export default function CartItems() {
             ))}
           </div>
         )}
-        <div className="cart-btn">
-          <Link to={"/"}>
-            <button onClick={() => setToggle(false)}>Close Cart</button>
-          </Link>
-        </div>
+        <Link to={"/"}>
+          <button onClick={() => setToggle(false)} className="cart-btn">
+            Close Cart
+          </button>
+        </Link>
       </div>
     </>
   );

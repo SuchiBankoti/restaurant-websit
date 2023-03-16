@@ -1,6 +1,26 @@
 * {
   font-family: sans-serif;
 }
+
 .app {
   background-color: black;
+}
+.main {
+  background-image: url(/public/image/on.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.nav-left,
+.nav-right {
+  display: flex;
+  width: 25%;
+  justify-content: space-around;
+}
+.menu-heading,
+.home-heading {
+  color: white;
+  font-family: fantasy;
+  font-size: larger;
+  letter-spacing: 2px;
 }

@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 .searchItems {
-  background-color: rgb(47, 2, 2);
+  background-color: black;
   position: absolute;
   top: 10%;
   left: 0;

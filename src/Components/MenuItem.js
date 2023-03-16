@@ -7,6 +7,7 @@ export default function MenuItem(props) {
     <div className="item-container">
       <div className="img">
         <img
+          className="foodimg"
           src={process.env.PUBLIC_URL + `/image/${item.name}.png`}
           alt="food"
         ></img>
