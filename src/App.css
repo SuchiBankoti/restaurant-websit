@@ -24,3 +24,9 @@
   font-size: larger;
   letter-spacing: 2px;
 }
+Link {
+  text-decoration: none;
+}
+a:hover {
+  font-size: 1.5rem;
+}
