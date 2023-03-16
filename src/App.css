@@ -24,7 +24,7 @@
   font-size: larger;
   letter-spacing: 2px;
 }
-Link {
+.link {
   text-decoration: none;
 }
 a:hover {

@@ -19,17 +19,17 @@ function App() {
         <div>
           <div className="navbar">
             <div className="nav-left">
-              <Link to={"/"}>
+              <Link to={"/"} className="link">
                 <div className="home-heading">Home</div>
               </Link>
               <Search />
             </div>
             <div className="nav-right">
-              <Link to={"/Components/Mainpage"}>
+              <Link to={"/Components/Mainpage"} className="link">
                 <div className="menu-heading">Menu</div>
               </Link>
               <div className="cart-logo">
-                <Link to={"/Components/CartItems"}>
+                <Link to={"/Components/CartItems"} className="link">
                   <Cart />
                 </Link>
               </div>
