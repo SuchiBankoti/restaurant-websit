@@ -15,7 +15,9 @@ export default function Search() {
       <div className="searchbar">
         <input value={searchInput} onChange={handleSearch} className="input" />
         <Link to="/restaurant-websit/SearchResults" className="link">
-          <FaSearch />
+          <div className="search-icon">
+            <FaSearch />
+          </div>
         </Link>
       </div>
     </div>

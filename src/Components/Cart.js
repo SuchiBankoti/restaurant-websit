@@ -12,7 +12,7 @@ export default function Cart() {
       <Link to={"/restaurant-websit/CartItems"} className="link">
         <FaCartArrowDown />
       </Link>
-      <div className="cart-items">{numberOfItemsInCart.length}</div>
+      <div className="cart-num">{numberOfItemsInCart.length}</div>
     </div>
   );
 }

@@ -2,26 +2,35 @@
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 0.5rem;
   color: white;
-  background-color: black;
   width: 100%;
-  height: 55px;
+  height: fit-content;
 }
 .nav-left,
 .nav-right {
   display: flex;
-  width: 25%;
+  width: fit-content;
   justify-content: space-around;
+  overflow-block: auto;
+  font-size: 1rem;
 }
 .menu-heading,
 .home-heading {
-  color: white;
   font-family: fantasy;
-  font-size: larger;
-  letter-spacing: 2px;
+  padding: 0.5rem;
 }
 .link {
   text-decoration: none;
   color: white;
+}
+@media (max-width: 500px) {
+  .nav-left,
+  .nav-right {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    font-size: 0.8rem;
+  }
 }

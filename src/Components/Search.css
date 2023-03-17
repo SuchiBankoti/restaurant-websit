@@ -8,13 +8,22 @@
   width: 100%;
 }
 .searchbar {
-  border: 2px solid grey;
-  padding: 5px;
+  border: 0.01rem solid grey;
+  padding: 0.2rem;
   display: flex;
-  justify-content: space-between;
-  border-radius: 10px;
+  border-radius: 0.3rem;
   width: fit-content;
+  align-items: center;
 }
+
 .input {
-  margin-right: 2%;
+  width: 10rem;
+  height: 2rem;
+}
+@media (max-width: 500px) {
+  .input {
+    font-size: 0.7rem;
+    width: 5rem;
+    height: 1rem;
+  }
 }

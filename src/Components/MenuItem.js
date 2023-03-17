@@ -17,9 +17,7 @@ export default function MenuItem(props) {
         <p className="item-des">{item.description}</p>
         <p className="item-price">{item.price}</p>
       </div>
-      <div className="add-btn">
-        <Adder item={item} />
-      </div>
+      <Adder item={item} />
     </div>
   );
 }
