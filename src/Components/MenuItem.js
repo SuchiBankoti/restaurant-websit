@@ -1,6 +1,7 @@
 import React from "react";
 import Adder from "./Adder";
 import "./MenuItem.css";
+import { FaDollarSign } from "react-icons/fa";
 export default function MenuItem(props) {
   const { item } = props;
   return (
@@ -15,7 +16,10 @@ export default function MenuItem(props) {
       <div className="item">
         <p className="item-name">{item.name}</p>
         <p className="item-des">{item.description}</p>
-        <p className="item-price">{item.price}</p>
+        <p className="item-price">
+          <FaDollarSign />
+          {item.price}
+        </p>
       </div>
       <Adder item={item} />
     </div>
