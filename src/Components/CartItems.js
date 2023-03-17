@@ -4,7 +4,7 @@ import MenuItem from "./MenuItem";
 import { dataContext } from "../Context";
 import { Link } from "react-router-dom";
 export default function CartItems() {
-  const { menu, toggle, setToggle } = useContext(dataContext);
+  const { menu } = useContext(dataContext);
   const cartItems = menu.filter((obj) => obj.unit > 0);
   return (
     <>

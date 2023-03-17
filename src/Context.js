@@ -40,8 +40,6 @@ function MenuProvider(props) {
       unit: 0,
     },
   ]);
-  const [toggle, setToggle] = useState(false);
-  const [toggleSearch, setToggleSearch] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   function manageCart(newItem, units) {
     setMenu((prev) =>
@@ -54,13 +52,9 @@ function MenuProvider(props) {
   return (
     <contextDataProvider.Provider
       value={{
-        toggle,
-        setToggle,
         menu,
         setMenu,
         manageCart,
-        toggleSearch,
-        setToggleSearch,
         searchInput,
         setSearchInput,
       }}
