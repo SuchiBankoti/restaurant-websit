@@ -15,13 +15,6 @@
   border-radius: 10px;
   width: fit-content;
 }
-.searchbar > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background-color: transparent;
-}
-.searchbar > input {
+.input {
   margin-right: 2%;
 }

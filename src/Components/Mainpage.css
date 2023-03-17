@@ -28,7 +28,7 @@
   width: 50%;
   height: 40%;
 }
-.description > h1 {
+.res-heading {
   margin: 0;
   border: 1px solid white;
   letter-spacing: 2px;
@@ -37,7 +37,7 @@
   font-size: 200%;
   font-weight: 100;
 }
-.description > p {
+.des-para {
   font-family: cursive;
   color: aliceblue;
   font-style: italic;

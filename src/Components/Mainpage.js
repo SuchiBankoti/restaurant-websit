@@ -12,8 +12,8 @@ export default function Mainpage() {
       <Navbar />
       <div className="main-page">
         <div className="description">
-          <h1>RESTAURANT</h1>
-          <p>New menu available from 12th feb!</p>
+          <h1 className="res-heading">RESTAURANT</h1>
+          <p className="des-para">New menu available from 12th feb!</p>
         </div>
         <div className="menu">
           {menu.map((item) => (

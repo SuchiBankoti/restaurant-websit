@@ -13,7 +13,7 @@ export default function Search() {
   return (
     <div>
       <div className="searchbar">
-        <input value={searchInput} onChange={handleSearch} />
+        <input value={searchInput} onChange={handleSearch} className="input" />
         <Link to="/SearchResults" className="link">
           <FaSearch />
         </Link>

@@ -7,24 +7,22 @@ export default function CartItems() {
   const { menu } = useContext(dataContext);
   const cartItems = menu.filter((obj) => obj.unit > 0);
   return (
-    <>
-      <div className="cart-content">
-        {cartItems.length === 0 ? (
-          <div style={{ color: "white" }}>No items in cart</div>
-        ) : (
-          <div>
-            {cartItems.map((obj) => (
-              <div key={nanoid()} className="cart-unit">
-                <MenuItem item={obj} />
-                <div className="unit-value"> X {obj.unit}</div>
-              </div>
-            ))}
-          </div>
-        )}
-        <Link to={"/"} className="link">
-          <button className="cart-btn">Close Cart</button>
-        </Link>
-      </div>
-    </>
+    <div className="cart-content">
+      {cartItems.length === 0 ? (
+        <div style={{ color: "white" }}>No items in cart</div>
+      ) : (
+        <div>
+          {cartItems.map((obj) => (
+            <div key={nanoid()} className="cart-unit">
+              <MenuItem item={obj} />
+              <div className="unit-value"> X {obj.unit}</div>
+            </div>
+          ))}
+        </div>
+      )}
+      <Link to={"/"} className="link">
+        <button className="cart-btn">Close Cart</button>
+      </Link>
+    </div>
   );
 }
