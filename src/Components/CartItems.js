@@ -32,7 +32,9 @@ export default function CartItems() {
               {totalPrice}
             </div>
           </div>
-          <div className="checkout">Place Order</div>
+          <Link to={"/restaurant-websit/CartItems/FinalPage"} className="link">
+            <div className="checkout">Place Order</div>
+          </Link>
         </>
       )}
 

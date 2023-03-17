@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SearchResults from "./Components/SearchResults";
+import FinalPage from "./Components/FinalPage";
 
 function App() {
   // const { toggle } = useContext(dataContext);
@@ -24,6 +25,10 @@ function App() {
         <Route
           path="/restaurant-websit/SearchResults"
           element={<SearchResults />}
+        ></Route>
+        <Route
+          path="/restaurant-websit/CartItems/FinalPage"
+          element={<FinalPage />}
         ></Route>
       </Routes>
     </BrowserRouter>
