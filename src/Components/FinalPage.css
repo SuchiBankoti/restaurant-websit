@@ -26,3 +26,13 @@
   margin-top: 20px;
   font-size: 1rem;
 }
+@media (max-width: 500px) {
+  .final-page {
+    position: absolute;
+    left: 65px;
+    width: 200px;
+  }
+  .thankyou {
+    font-size: 1rem;
+  }
+}
