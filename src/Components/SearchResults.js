@@ -30,7 +30,7 @@ export default function SearchResults() {
       ) : (
         <div>No items in our menu matching above description</div>
       )}
-      <Link to={"/"}>
+      <Link to={"/restaurant-websit"}>
         <button className="cart-btn">Close</button>
       </Link>
     </div>

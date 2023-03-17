@@ -7,17 +7,17 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <div className="nav-left">
-        <Link to={"/"} className="link">
+        <Link to={"/restaurant-websit"} className="link">
           <div className="home-heading">Home</div>
         </Link>
         <Search />
       </div>
       <div className="nav-right">
-        <Link to={"/Mainpage"} className="link">
+        <Link to={"/restaurant-websit/Mainpage"} className="link">
           <div className="menu-heading">Menu</div>
         </Link>
         <div className="cart-logo">
-          <Link to={"/CartItems"} className="link">
+          <Link to={"/restaurant-websit/CartItems"} className="link">
             <Cart />
           </Link>
         </div>

@@ -20,7 +20,7 @@ export default function CartItems() {
           ))}
         </div>
       )}
-      <Link to={"/"} className="link">
+      <Link to={"/restaurant-websit"} className="link">
         <button className="cart-btn">Close Cart</button>
       </Link>
     </div>

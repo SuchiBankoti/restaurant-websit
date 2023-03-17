@@ -13,10 +13,19 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/Mainpage" element={<Mainpage />}></Route>
-          <Route path="/CartItems" element={<CartItems />}></Route>
-          <Route path="/SearchResults" element={<SearchResults />}></Route>
+          <Route path="/restaurant-websit" element={<Home />}></Route>
+          <Route
+            path="/restaurant-websit/Mainpage"
+            element={<Mainpage />}
+          ></Route>
+          <Route
+            path="/restaurant-websit/CartItems"
+            element={<CartItems />}
+          ></Route>
+          <Route
+            path="/restaurant-websit/SearchResults"
+            element={<SearchResults />}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </>

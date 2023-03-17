@@ -9,7 +9,7 @@ export default function Cart() {
   const numberOfItemsInCart = menu.filter((obj) => obj.unit > 0);
   return (
     <div className="cart">
-      <Link to={"/CartItems"} className="link">
+      <Link to={"/restaurant-websit/CartItems"} className="link">
         <FaCartArrowDown />
       </Link>
       <div className="cart-items">{numberOfItemsInCart.length}</div>
