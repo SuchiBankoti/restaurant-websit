@@ -8,10 +8,7 @@ export default function CartItems() {
   const cartItems = menu.filter((obj) => obj.unit > 0);
   return (
     <>
-      <div
-        className="cart-content"
-        style={{ display: toggle ? "block" : "none" }}
-      >
+      <div className="cart-content">
         {cartItems.length === 0 ? (
           <div style={{ color: "white" }}>No items in cart</div>
         ) : (
@@ -24,10 +21,8 @@ export default function CartItems() {
             ))}
           </div>
         )}
-        <Link to={"/"}>
-          <button onClick={() => setToggle(false)} className="cart-btn">
-            Close Cart
-          </button>
+        <Link to={"/"} className="link">
+          <button className="cart-btn">Close Cart</button>
         </Link>
       </div>
     </>

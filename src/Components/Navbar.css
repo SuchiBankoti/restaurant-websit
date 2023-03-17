@@ -8,3 +8,20 @@
   width: 100%;
   height: 55px;
 }
+.nav-left,
+.nav-right {
+  display: flex;
+  width: 25%;
+  justify-content: space-around;
+}
+.menu-heading,
+.home-heading {
+  color: white;
+  font-family: fantasy;
+  font-size: larger;
+  letter-spacing: 2px;
+}
+.link {
+  text-decoration: none;
+  color: white;
+}

@@ -1,24 +1,3 @@
-.app {
-  background-color: black;
-}
-
-.nav-left,
-.nav-right {
-  display: flex;
-  width: 25%;
-  justify-content: space-around;
-}
-.menu-heading,
-.home-heading {
-  color: white;
-  font-family: fantasy;
-  font-size: larger;
-  letter-spacing: 2px;
-}
-.link {
-  text-decoration: none;
-  color: white;
-}
 a:hover {
   font-size: 1.5rem;
 }

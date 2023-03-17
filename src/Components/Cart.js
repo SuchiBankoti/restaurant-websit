@@ -3,13 +3,16 @@ import "./Cart.css";
 import { dataContext } from "../Context";
 
 import { FaCartArrowDown } from "react-icons/fa";
+import { Link } from "react-router-dom";
 export default function Cart() {
-  const { setToggle, menu } = useContext(dataContext);
+  const { menu } = useContext(dataContext);
   const numberOfItemsInCart = menu.filter((obj) => obj.unit > 0);
   return (
     <>
       <div className="cart">
-        <FaCartArrowDown onClick={() => setToggle(true)} />
+        <Link to={"/CartItems"} className="link">
+          <FaCartArrowDown />
+        </Link>
         <div className="cart-items">{numberOfItemsInCart.length}</div>
       </div>
     </>
