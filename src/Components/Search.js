@@ -2,11 +2,10 @@ import React, { useContext } from "react";
 import { dataContext } from "../Context";
 import { FaSearch } from "react-icons/fa";
 import "./Search.css";
-import SearchResults from "./SearchResults";
+import { Link } from "react-router-dom";
 
 export default function Search() {
-  const { setToggleSearch, searchInput, setSearchInput } =
-    useContext(dataContext);
+  const { searchInput, setSearchInput } = useContext(dataContext);
 
   function handleSearch(e) {
     setSearchInput(e.target.value);
@@ -15,11 +14,10 @@ export default function Search() {
     <div>
       <div className="searchbar">
         <input value={searchInput} onChange={handleSearch} />
-        <div onClick={() => setToggleSearch(true)}>
+        <Link to="/SearchResults" className="link">
           <FaSearch />
-        </div>
+        </Link>
       </div>
-      <SearchResults />
     </div>
   );
 }

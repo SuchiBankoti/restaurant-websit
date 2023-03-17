@@ -30,14 +30,13 @@
   background-color: aliceblue;
 }
 .cart-content {
-  position: absolute;
+  /* position: absolute;
   top: 1%;
-  left: 50%;
-  width: 50%;
-  height: 100%;
+  left: 50%; */
   padding: 10px;
   background-color: black;
   border: 2px solid white;
+  height: 100vh;
 }
 
 .cart-btn {

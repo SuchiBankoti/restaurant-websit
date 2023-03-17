@@ -3,21 +3,24 @@ import "./Mainpage.css";
 import MenuItem from "./MenuItem";
 import { nanoid } from "nanoid";
 import { dataContext } from "../Context";
+import Navbar from "./Navbar";
 
 export default function Mainpage() {
   const { menu } = useContext(dataContext);
   return (
-    <div className="main-page">
-      <div className="description">
-        <h1>RESTAURANT</h1>
-        <p>New menu available from 12th feb!</p>
+    <>
+      <Navbar />
+      <div className="main-page">
+        <div className="description">
+          <h1>RESTAURANT</h1>
+          <p>New menu available from 12th feb!</p>
+        </div>
+        <div className="menu">
+          {menu.map((item) => (
+            <MenuItem key={nanoid()} item={item} />
+          ))}
+        </div>
       </div>
-      <div className="menu">
-        {menu.map((item) => (
-          <MenuItem key={nanoid()} item={item} />
-        ))}
-      </div>
-      ;
-    </div>
+    </>
   );
 }

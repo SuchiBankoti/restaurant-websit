@@ -3,11 +3,8 @@
 }
 .searchItems {
   background-color: black;
-  position: absolute;
-  top: 10%;
-  left: 0;
   color: white;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 .searchbar {

@@ -5,12 +5,9 @@
 .app {
   background-color: black;
 }
-.main {
-  background-image: url(/public/image/on.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
+/* .main {
+ 
+} */
 .nav-left,
 .nav-right {
   display: flex;
@@ -26,6 +23,7 @@
 }
 .link {
   text-decoration: none;
+  color: white;
 }
 a:hover {
   font-size: 1.5rem;

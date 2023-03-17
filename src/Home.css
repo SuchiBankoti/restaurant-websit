@@ -1,9 +1,8 @@
 .home-page {
-  background-color: transparent;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-image: url(/public/image/on.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 .home-content {
   border: 0.5px dotted white;
