@@ -1,13 +1,7 @@
-* {
-  font-family: sans-serif;
-}
-
 .app {
   background-color: black;
 }
-/* .main {
- 
-} */
+
 .nav-left,
 .nav-right {
   display: flex;
