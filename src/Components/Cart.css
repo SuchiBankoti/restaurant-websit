@@ -54,6 +54,18 @@
   color: white;
   font-size: 0.8em;
 }
+.checkout {
+  height: fit-content;
+  width: fit-content;
+  background-color: rgb(199, 195, 195);
+  margin: 1em;
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: 0.7em;
+  margin-left: auto;
+  text-align: center;
+  padding: 0.5em;
+}
 @media (max-width: 500px) {
   .cart-content {
     font-size: 20px;

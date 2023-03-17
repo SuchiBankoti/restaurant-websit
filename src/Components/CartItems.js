@@ -16,22 +16,26 @@ export default function CartItems() {
       {cartItems.length === 0 ? (
         <div style={{ color: "white" }}>No items in cart</div>
       ) : (
-        <div>
-          {cartItems.map((obj) => (
-            <div key={nanoid()} className="cart-unit">
-              <MenuItem item={obj} />
-              <div className="unit-value"> X {obj.unit}</div>
+        <>
+          <div>
+            {cartItems.map((obj) => (
+              <div key={nanoid()} className="cart-unit">
+                <MenuItem item={obj} />
+                <div className="unit-value"> X {obj.unit}</div>
+              </div>
+            ))}
+          </div>
+          <div className="total-sum">
+            <div>Total Amount:</div>
+            <div>
+              <FaDollarSign />
+              {totalPrice}
             </div>
-          ))}
-        </div>
+          </div>
+          <div className="checkout">Place Order</div>
+        </>
       )}
-      <div className="total-sum">
-        <div>Total Amount:</div>
-        <div>
-          <FaDollarSign />
-          {totalPrice}
-        </div>
-      </div>
+
       <Link to={"/restaurant-websit"} className="link">
         <button className="cart-btn">Close Cart</button>
       </Link>
