@@ -10,25 +10,23 @@ function App() {
   // const { toggle } = useContext(dataContext);
 
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/restaurant-websit" element={<Home />}></Route>
-          <Route
-            path="/restaurant-websit/Mainpage"
-            element={<Mainpage />}
-          ></Route>
-          <Route
-            path="/restaurant-websit/CartItems"
-            element={<CartItems />}
-          ></Route>
-          <Route
-            path="/restaurant-websit/SearchResults"
-            element={<SearchResults />}
-          ></Route>
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/restaurant-websit" element={<Home />}></Route>
+        <Route
+          path="/restaurant-websit/Mainpage"
+          element={<Mainpage />}
+        ></Route>
+        <Route
+          path="/restaurant-websit/CartItems"
+          element={<CartItems />}
+        ></Route>
+        <Route
+          path="/restaurant-websit/SearchResults"
+          element={<SearchResults />}
+        ></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

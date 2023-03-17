@@ -17,9 +17,7 @@ export default function Navbar() {
           <div className="menu-heading">Menu</div>
         </Link>
         <div className="cart-logo">
-          <Link to={"/restaurant-websit/CartItems"} className="link">
-            <Cart />
-          </Link>
+          <Cart />
         </div>
       </div>
     </div>
