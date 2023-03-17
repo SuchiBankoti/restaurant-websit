@@ -1,6 +1,3 @@
-* {
-  box-sizing: border-box;
-}
 .item-container {
   border-bottom: 0.02em dotted grey;
   display: flex;
