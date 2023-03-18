@@ -29,7 +29,7 @@ export default function CartItems() {
             <div>Total Amount:</div>
             <div>
               <FaDollarSign />
-              {totalPrice}
+              {totalPrice.toFixed(2)}
             </div>
           </div>
           <Link to={"/restaurant-websit/CartItems/FinalPage"} className="link">
