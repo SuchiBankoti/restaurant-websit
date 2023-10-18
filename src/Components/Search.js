@@ -1,14 +1,16 @@
-import React, { useContext } from "react";
-import { dataContext } from "../Context";
+import React from "react";
 import { FaSearch } from "react-icons/fa";
 import "./Search.css";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchInput } from "../Store/CreateSlice";
 
 export default function Search() {
-  const { searchInput, setSearchInput } = useContext(dataContext);
+  const dispatch=useDispatch()
+  const { searchInput }=useSelector(state=>state.menu);
 
   function handleSearch(e) {
-    setSearchInput(e.target.value);
+    dispatch(setSearchInput(e.target.value));
   }
   return (
     <div>

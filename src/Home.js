@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import "./Home.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getMenu } from "./Store/CreateSlice";
 export default function Home() {
+  const{trackData}=useSelector(state=>state.menu)
+  const dispatch=useDispatch()
+  useEffect(() => {
+    dispatch(getMenu())
+  },[trackData])
   function Content() {
     return (
       <div className="home-content">

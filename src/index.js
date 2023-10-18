@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { MenuProvider } from "./Context";
 import "./index.css";
 import App from "./App";
+import { Provider } from "react-redux";
+import { store } from "./Store/Store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <MenuProvider>
+    <Provider store={store}>
     <App />
-  </MenuProvider>
+    </Provider>
 );

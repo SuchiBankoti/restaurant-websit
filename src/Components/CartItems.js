@@ -1,16 +1,24 @@
-import React, { useContext } from "react";
+import React, { useEffect } from "react";
 import { nanoid } from "nanoid";
 import MenuItem from "./MenuItem";
-import { dataContext } from "../Context";
 import { Link } from "react-router-dom";
 import { FaDollarSign } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { getMenu } from "../Store/CreateSlice";
+
+
 export default function CartItems() {
-  const { menu } = useContext(dataContext);
-  const cartItems = menu.filter((obj) => obj.unit > 0);
+  const { menu,trackData } = useSelector(state => state.menu)
+  const dispatch=useDispatch()
+  useEffect(() => {
+    dispatch(getMenu())
+  },[trackData])
+  const cartItems = menu.filter((obj) => obj.units > 0);
   const totalPrice = cartItems.reduce((total, e) => {
-    total = total + e.price * e.unit;
+    total = total + e.price * e.units;
     return total;
   }, 0);
+  console.log("cartitmes",cartItems)
   return (
     <div className="cart-content">
       {cartItems.length === 0 ? (
@@ -21,7 +29,7 @@ export default function CartItems() {
             {cartItems.map((obj) => (
               <div key={nanoid()} className="cart-unit">
                 <MenuItem item={obj} />
-                <div className="unit-value"> X {obj.unit}</div>
+                <div className="unit-value"> X {obj.units}</div>
               </div>
             ))}
           </div>

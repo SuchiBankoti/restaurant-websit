@@ -1,38 +1,22 @@
-import React, { useContext, useReducer } from "react";
-import { dataContext } from "../Context";
+import React from "react";
 import "./Adder.css";
+import { useDispatch, useSelector } from "react-redux";
+import { updateCart } from "../Store/CreateSlice";
 export default function Form(props) {
-  const { manageCart } = useContext(dataContext);
+  const{menu}=useSelector(state=>state.menu)
+  const dispatch=useDispatch()
   const { item } = props;
-  const reducer = (quant, action) => {
-    switch (action) {
-      case "+":
-        quant = quant + 1;
-        manageCart(item, quant);
-        return quant;
-
-      case "-":
-        quant = Math.max(quant - 1, 0);
-        manageCart(item, quant);
-        return quant;
-
-      default:
-        console.log("Unexpected action");
-    }
-  };
-  const [quant, dispatch] = useReducer(reducer, item.unit);
-
   return (
     <div className="quantity">
-      {quant === 0 ? (
-        <div onClick={() => dispatch("+")} className="add">
+      {item.units === 0 ? (
+        <div onClick={() => dispatch(updateCart({id:item.id,item:item,units:1}))} className="add">
           Add
         </div>
       ) : (
         <div className="plus-minus">
-          <div onClick={() => dispatch("-")}>-</div>
-          <div>{quant}</div>
-          <div onClick={() => dispatch("+")}>+</div>
+          <div onClick={() => dispatch(updateCart({id:item.id,item:item,units:(item.units-1)}))}>-</div>
+          <div>{item.units}</div>
+          <div onClick={() => dispatch(updateCart({id:item.id,item:item,units:(item.units+1)}))}>+</div>
         </div>
       )}
     </div>

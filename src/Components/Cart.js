@@ -1,12 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Cart.css";
-import { dataContext } from "../Context";
-
 import { FaCartArrowDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 export default function Cart() {
-  const { menu } = useContext(dataContext);
-  const numberOfItemsInCart = menu.filter((obj) => obj.unit > 0);
+  const { menu } = useSelector(state=>state.menu);
+  const numberOfItemsInCart = menu.filter((obj) => obj.units > 0);
   return (
     <div className="cart">
       <Link to={"/restaurant-websit/CartItems"} className="link">

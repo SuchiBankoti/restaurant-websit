@@ -1,10 +1,15 @@
-import React, { useContext } from "react";
+import React, {useEffect } from "react";
 import MenuItem from "./MenuItem";
 import { nanoid } from "nanoid";
-import { dataContext } from "../Context";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getMenu } from "../Store/CreateSlice";
 export default function SearchResults() {
-  const { menu, searchInput } = useContext(dataContext);
+  const { menu, searchInput,trackData } = useSelector(state => state.menu)
+  const dispatch=useDispatch()
+  useEffect(() => {
+    dispatch(getMenu())
+  },[trackData])
   return (
     <div className="searchItems">
       {menu.filter((ele) =>
@@ -14,7 +19,7 @@ export default function SearchResults() {
           ? ele
           : ""
       ).length > 0 ? (
-        <div>
+        <>
           {menu
             .filter((ele) =>
               searchInput.localeCompare(ele.name, "en", {
@@ -26,7 +31,7 @@ export default function SearchResults() {
             .map((e) => (
               <MenuItem key={nanoid()} item={e} />
             ))}
-        </div>
+        </>
       ) : (
         <div>No items in our menu matching above description</div>
       )}

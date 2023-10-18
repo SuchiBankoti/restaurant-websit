@@ -1,12 +1,18 @@
-import React, { useContext } from "react";
+import React, { useEffect }  from "react";
 import "./Mainpage.css";
 import MenuItem from "./MenuItem";
 import { nanoid } from "nanoid";
-import { dataContext } from "../Context";
 import Navbar from "./Navbar";
+import { useDispatch, useSelector } from "react-redux";
+import { getMenu } from "../Store/CreateSlice";
 
 export default function Mainpage() {
-  const { menu } = useContext(dataContext);
+  const { menu, trackData } = useSelector(state => state.menu);
+  const dispatch=useDispatch()
+  useEffect(() => {
+    dispatch(getMenu())
+  }, [trackData])
+  console.log('menu',menu)
   return (
     <>
       <Navbar />
