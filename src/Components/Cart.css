@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   height: 100%;
+  position: relative;
 }
 .cart-num {
   background-color: white;
@@ -62,6 +63,26 @@
   margin-left: auto;
   text-align: center;
   padding: 0.5em;
+}
+.cartContent {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: -100vw; /* Initially hidden on the right */
+  width:100vw;
+  height: 100%;
+  opacity: 0; /* Initially transparent */
+  transform: translateX(20px); /* Slightly off-screen to the right */
+  transition: all 0.3s ease; /* Add smooth transition */
+}
+
+.cartContent.active {
+  right:0; /* Slide in from the right */
+  opacity: 1; /* Fade in */
+  transform: translateX(0); /* Reset position */
+}
+.icon{
+  cursor: pointer;
 }
 @media (max-width: 500px) {
   .cart-content {

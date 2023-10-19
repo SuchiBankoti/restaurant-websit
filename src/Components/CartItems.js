@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { nanoid } from "nanoid";
 import MenuItem from "./MenuItem";
 import { Link } from "react-router-dom";
-import { FaDollarSign } from "react-icons/fa";
+import { FaDollarSign,FaArrowLeft } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { getMenu } from "../Store/CreateSlice";
+import { activateCart, getMenu, updateCart } from "../Store/CreateSlice";
 
 
 export default function CartItems() {
@@ -18,7 +18,13 @@ export default function CartItems() {
     total = total + e.price * e.units;
     return total;
   }, 0);
-  console.log("cartitmes",cartItems)
+
+  function checkout() {
+    menu.forEach(element => { 
+      dispatch(updateCart({id:element.id, item:element,units:0}))
+    })
+    dispatch(activateCart(false))
+  }
   return (
     <div className="cart-content">
       {cartItems.length === 0 ? (
@@ -41,14 +47,14 @@ export default function CartItems() {
             </div>
           </div>
           <Link to={"/restaurant-websit/CartItems/FinalPage"} className="link">
-            <div className="checkout">Place Order</div>
+            <div className="checkout" onClick={checkout}>Place Order</div>
           </Link>
         </>
       )}
 
-      <Link to={"/restaurant-websit"} className="link">
-        <button className="cart-btn">Close Cart</button>
-      </Link>
+      
+        <FaArrowLeft className="icon" onClick={()=>dispatch(activateCart(false))} />
+      
     </div>
   );
 }

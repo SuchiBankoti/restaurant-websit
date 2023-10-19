@@ -24,6 +24,22 @@
   text-decoration: none;
   color: white;
 }
+.loader {
+  position: fixed;
+  z-index: 2;
+  background-color: rgb(233, 162, 20);
+  top: -60px; /* Start offscreen */
+  right: 0;
+  width: 100vw;
+  height: 60px;
+  opacity: 0;
+  transition: top 0.1s ease, opacity 0.1s ease; 
+}
+
+.loader.active {
+  top: 0; /* Slide in from the top */
+  opacity: 1;
+}
 @media (max-width: 500px) {
   .nav-left,
   .nav-right {

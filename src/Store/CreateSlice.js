@@ -4,11 +4,14 @@ const api = "https://expense-tracker-25d4f-default-rtdb.asia-southeast1.firebase
 
 
 const initialState = {
-    isLoading:false,
+    isLoading: false,
+    isReqSuccess:false,
+    isReqError:false,
     menu: [],
     searchInput: "",
     cart: [],
-    trackData:0
+    trackData: 0,
+    activeCart:false
     
 }
 
@@ -53,6 +56,12 @@ const menuSlice = createSlice({
     reducers: {
         setSearchInput: (state, action) => {
             state.searchInput=action.payload
+        },
+        activateCart: (state,action) => {
+            state.activeCart=action.payload
+        },
+        disableSuccess: (state) => {
+            state.isReqSuccess=false
         }
        
     },
@@ -62,6 +71,7 @@ const menuSlice = createSlice({
         },
         [getMenu.fulfilled]: (state, action) => {
             state.isLoading = false
+            state.isReqSuccess=true
             if (action.payload) {
                 const a = Object.entries(action.payload);
                 const allMenuData = a.map((e) => {
@@ -70,25 +80,31 @@ const menuSlice = createSlice({
                 console.log('allmeuf',allMenuData)
                 state.menu = allMenuData
             }
+            
         },
         [getMenu.rejected]: (state) => {
-            state.isLoading=false
+            state.isReqError=true
         },
         
         [updateCart.pending]: (state) => {
+            state.isLoading=true
         },
         [updateCart.fulfilled]: (state, action) => {
+            state.isLoading = false
+            state.isReqSuccess=true
             console.log('update cart')
-            state.trackData=state.trackData+1
+            state.trackData = state.trackData + 1
+           
         },
         [updateCart.rejected]: (state) => {
+            state.isReqError=true
         },
         
     }
 
 });
 
-export const{setSearchInput}=menuSlice.actions
+export const{disableSuccess,setSearchInput,activateCart}=menuSlice.actions
 
 export default menuSlice.reducer
 

@@ -1,0 +1,27 @@
+.loaderSection{
+    height: 60px;
+    width: 100vw;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+}
+.ErrorSection{
+    height: 60px;
+    width: 100vw;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+}
+.successSection{
+    height: 60px;
+    width: 100vw;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+}

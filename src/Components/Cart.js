@@ -2,16 +2,21 @@ import React from "react";
 import "./Cart.css";
 import { FaCartArrowDown } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { activateCart } from "../Store/CreateSlice";
+import CartItems from "./CartItems";
 export default function Cart() {
-  const { menu } = useSelector(state=>state.menu);
+  const { menu, activeCart } = useSelector(state => state.menu);
+  const dispatch = useDispatch()
+  console.log('active',activeCart)
   const numberOfItemsInCart = menu.filter((obj) => obj.units > 0);
   return (
     <div className="cart">
-      <Link to={"/restaurant-websit/CartItems"} className="link">
-        <FaCartArrowDown />
-      </Link>
+        <FaCartArrowDown onClick={()=>dispatch(activateCart(true))} className="icon"/>
       <div className="cart-num">{numberOfItemsInCart.length}</div>
+      <div  className={`cartContent ${activeCart ? "active" : ""}`}>
+            <CartItems/>
+      </div>
     </div>
   );
 }
