@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import Cart from "./Cart";
 import Search from "./Search";
 import { Link } from "react-router-dom";
@@ -10,17 +10,19 @@ import Success from "./Success";
 import { disableSuccess } from "../Store/CreateSlice";
 export default function Navbar() {
   const { isLoading, isReqError, isReqSuccess } = useSelector(state => state.menu)
+  const [initialRender, setInitialRender] = useState(true);
   const dispatch = useDispatch()
   
   useEffect(() => {
-    if (isReqSuccess) {
+    if (isReqSuccess && !initialRender) {
       const timer = setTimeout(() => {
         dispatch(disableSuccess());
       }, 2000); 
 
       return () => clearTimeout(timer);
     }
-  }, [isReqSuccess, dispatch]);
+  }, [isReqSuccess,initialRender, dispatch]);
+
 
   
   return (
@@ -39,13 +41,13 @@ export default function Navbar() {
           <Cart />
         </div>
       </div>
-      <div className={`loader ${isLoading ? "active" : ""}`}>
+      <div className={`loader ${isLoading && !initialRender ? "active" : ""}`}>
         <Loader />
       </div>
-      <div className={`loader ${isReqError ? "active" : ""}`} style={{background:"red"}}>
+      <div className={`loader ${isReqError && !initialRender ? "active" : ""}`} style={{background:"red"}}>
         <Error />
       </div>
-      <div className={`loader ${isReqSuccess ? "active" : ""}`}>
+      <div className={`loader ${isReqSuccess && !initialRender  ? "active" : ""}`}>
         <Success />
       </div>
     </div>

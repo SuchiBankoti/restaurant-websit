@@ -71,6 +71,7 @@ const menuSlice = createSlice({
         },
         [getMenu.fulfilled]: (state, action) => {
             state.isLoading = false
+            state.isReqSuccess=true
             if (action.payload) {
                 const a = Object.entries(action.payload);
                 const allMenuData = a.map((e) => {
@@ -90,6 +91,7 @@ const menuSlice = createSlice({
         },
         [updateCart.fulfilled]: (state, action) => {
             state.isLoading = false
+            state.isReqSuccess=true
             console.log('update cart')
             state.trackData = state.trackData + 1
            
