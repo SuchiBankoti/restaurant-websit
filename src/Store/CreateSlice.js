@@ -71,7 +71,6 @@ const menuSlice = createSlice({
         },
         [getMenu.fulfilled]: (state, action) => {
             state.isLoading = false
-            state.isReqSuccess=true
             if (action.payload) {
                 const a = Object.entries(action.payload);
                 const allMenuData = a.map((e) => {
