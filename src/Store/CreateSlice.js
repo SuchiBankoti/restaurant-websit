@@ -90,7 +90,6 @@ const menuSlice = createSlice({
         },
         [updateCart.fulfilled]: (state, action) => {
             state.isLoading = false
-            state.isReqSuccess=true
             console.log('update cart')
             state.trackData = state.trackData + 1
            
